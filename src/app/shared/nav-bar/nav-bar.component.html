@@ -1,0 +1,26 @@
+<header>
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-sm container-fluid collect">
+      <div class="swap-nav">
+      <a class="navbar-brand" routerLink="Home" [routerLinkActive]="'active'"><img src="../../assets/images/Logo.svg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-text-right"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="Home" [routerLinkActive]="'active'">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="'About'" [routerLinkActive]="'active'">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="AllRecipes" [routerLinkActive]="'active'">All Recipes</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+     <button  [ngClass]="{'btn':true,'btn-danger':true}" (click)="navigateLogin()">logOut</button>
+    </div>
+  </nav>
+  </header>

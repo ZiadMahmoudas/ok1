@@ -1,0 +1,191 @@
+header{
+  padding-bottom: 78px;
+ }
+ header .navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 2px 3px 4px #000;
+  align-items: baseline;
+}
+
+header .navbar .collect {
+  align-items: baseline;
+}
+ header .navbar .collect .swap-nav {
+  width:75%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+ header .navbar .collect .swap-nav .navbar-brand {
+  margin-right: 0;
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse {
+  flex-grow: 0;
+  position: absolute;
+  top: 100%;
+  width: 95%;
+  border-radius: 10px;
+  padding-block: 10px;
+  background-color: var(--pink);
+  left: 0;
+  margin-left: 10px;
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav {
+  padding-left: 25px;
+  gap: 5px;
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li:nth-child(5),
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li:nth-child(6) {
+  display: flex;
+  gap: 2px;
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li:nth-child(5) a,
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li:nth-child(6) .shop {
+  border-radius: 50%;
+  padding-inline: 9px;
+  padding-block: 7px;
+  text-align: center;
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link {
+  font-size: .975rem;
+  line-height: 24px;
+  font-family: Medium;
+  color: #000;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:hover,
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:focus,
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .active {
+  color: var(--red);
+  font-family: Bold;
+}
+
+header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:hover::after,
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:focus::after,
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li.active::after,
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li.active::after {
+  width: 95%;
+  background-color: var(--red);
+}
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link::after {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 0;
+  background-color: #171717;
+  height: 4px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 0%;
+}
+
+ header .navbar .collect .swap-nav .navbar-toggler {
+  border: none;
+  box-shadow: none;
+  border-radius: 20%;
+  background-color: #592066;
+}
+
+ header .navbar .collect .swap-nav .navbar-toggler i {
+  font-size: 32px;
+}
+
+ header .navbar .nav-icons {
+  display: none;
+}
+
+header .navbar .nav-icons a {
+  background-color: #171717;
+  border-radius: 50%;
+  padding-block: 5px;
+  padding-inline: 8px;
+}
+
+@media(min-width:576px) {
+  html {
+      font-size: 14px;
+  }
+ header .navbar .collect {
+      min-width: 589px;
+      flex-direction: row;
+  }
+
+ header .navbar .collect .swap-nav {
+      width: 100%;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+  }
+
+   header .navbar .collect .swap-nav .navbar-collapse {
+      width: auto;
+      position: static;
+      background-color: transparent;
+      flex-basis: auto;
+
+  }
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav {
+      gap: 2px;
+      padding-left: 0;
+  }
+
+   header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li:nth-child(5),
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li:nth-child(6) {
+      display: none;
+  }
+
+   header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:focus::after,
+  header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:hover::after {
+      width: 100%;
+  }
+
+ header .navbar .collect .nav-icons {
+      display: flex;
+      gap: 16px;
+  }
+}
+
+@media(min-width:768px) {
+  html {
+      font-size: 16px;
+  }
+
+ header .navbar .collect .swap-nav {
+      width: 82%;
+      justify-content: space-around;
+  }
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav {
+      gap: 32px;
+  }
+}
+@media(min-width:992px) {
+   header .navbar {
+      position: fixed;
+      width: 100%;
+  }
+
+ header .navbar .collect .swap-nav {
+      width: 71%;
+      justify-content: space-between;
+  }
+
+ header .navbar .collect .swap-nav .navbar-collapse {
+      justify-content: flex-end;
+  }
+
+ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav {
+      gap: 32px;
+  }
+}

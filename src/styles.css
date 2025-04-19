@@ -1,0 +1,67 @@
+:root {
+  --pink: #FFCECE;
+  --red: #FF2626;
+  --color:#ff88a6;
+  --bg-color:#252525;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, li {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+@font-face {
+  font-family: Bold;
+  src: url(../Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: Medium;
+  src: url(../Poppins/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: Regular;
+  src: url(../Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: SemiBold;
+  src: url(../Poppins/Poppins-SemiBold.ttf);
+}
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF2626;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e64708;
+}
+
+html {
+  font-size: 14px;
+}
+
+li, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=styles.css.map */

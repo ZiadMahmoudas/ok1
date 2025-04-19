@@ -1,0 +1,56 @@
+<section class="sec pb-4">
+  <div class=" px-0 rounded-5">
+      <div class="bg-dark ">
+<div class="notation text-white container  mb-3 pt-3 ">
+  <h4>All Notes</h4>
+  <div class="d-flex gap-2">
+  <button id="clear" class="d-flex  align-items-center   btn btn-success text-white" type="button" (click)="openPopup()">
+    Create Notes
+  </button>
+
+</div>
+</div>
+  <div *ngIf="allNotes.length <1 ">
+    <h2 class="text-white">No Notes Created</h2>
+  </div>
+  <div class="row g-0">
+  <div class="card text-bg-secondary " style="max-width: 18rem;" *ngFor="let note of allNotes">
+      <div class="col-12 col-sm-6 col-lg-4 ">
+      <div class="card-header text-center"   [ngClass]="{
+        'bg-danger': note.priority === 'hard',
+        'bg-warning': note.priority === 'medium',
+        'bg-info': note.priority === 'easy',
+      }">{{note.title | truncate:10:"..."}}</div>
+  <div class="card-body">
+    <h5 class="card-title text-center">{{note.category | truncate:10:"..."}}</h5>
+    <hr>
+    <p class="card-text">{{note.content | truncate:10:"..."}}</p>
+    <p class="card-text">{{note.priority | truncate:10:"..."}}</p>
+    <p class="card-text">{{note.tags | truncate:10:"..."}}</p>
+    <div class="d-flex gap-2 justify-content-center">
+    <a [routerLink]="['view', note.id]" class="btn btn-primary">view</a>
+    <button type="button"  class="btn btn-outline-success" (click)="onUpdate(note.id)">update</button>
+    <button type="button" class="btn btn-danger" (click)="onDelete(note.id)">Delete</button>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<app-create-node
+(closePopup)="closePopup()"
+*ngIf="isPopupOpenCreate"
+(EmitNote)="createOrupdateNotes($event)"
+[isEdit]="isEdit"
+[selected]="selected"
+></app-create-node>
+
+<app-delete
+(BTNDelted)="closepopupDelete()"
+[noteId]="currentId"
+*ngIf="isPopupOpenDelete"
+(EmitDelete)="onConfirmDelete()"
+></app-delete>

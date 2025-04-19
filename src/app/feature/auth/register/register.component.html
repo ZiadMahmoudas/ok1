@@ -1,0 +1,87 @@
+
+<section class="full-screen text-white " >
+  <div class="container ">
+      <div class="form ">
+      <div class="content">
+          <h4>Register</h4>
+          <p>Welcome onboard with us!</p>
+      </div>
+          <form
+           autocomplete="off"
+           [formGroup]="Register"
+           (ngSubmit)="onSumbit()">
+  <div class="input-box mt-4">
+      <input
+      type="text"
+      id="name"
+
+      formControlName="name">
+      <label for="name">name</label>
+      <i class="bi bi-person-fill"></i>
+  </div>
+  <small *ngIf="Name.invalid">
+    <div class="text-danger" *ngIf="Name.errors['pattern']">Name Is Required</div>
+   </small>
+  <div class="input-box mt-4">
+      <input
+       type="email"
+       id="email"
+       formControlName="email">
+      <label for="email">Email</label>
+      <i class="bi bi-envelope-heart-fill"></i>
+  </div>
+  <small *ngIf="Email.invalid">
+    <div class="text-danger" *ngIf="Email.errors['pattern']">Email Is Required</div>
+   </small>
+  <div class="input-box mt-4">
+      <input
+        #passwordInput
+        type="password"
+        id="pass"
+        formControlName="password">
+      <label for="pass">Password</label>
+      <i #btneye1 class="bi bi-eye-fill eye1" (click)="appear()"> </i>
+  </div>
+  <small *ngIf="password.invalid">
+    <div class="text-danger" *ngIf="password.errors['pattern']">password Is Required</div>
+   </small>
+  <div class="input-box mt-4">
+      <input
+        type="text"
+        id="phone"
+        formControlName="phone">
+      <label for="phone">phone</label>
+      <i class="bi bi-phone-fill"></i>
+  </div>
+  <small *ngIf="phone.invalid && phone.touched">
+    <div class="text-danger" *ngIf="phone.errors['required']">phone Is Required</div>
+   </small>
+  <div class="input-box mt-4">
+      <input
+       type="text"
+       id="age"
+       formControlName="age">
+      <label for="age">age</label>
+  </div>
+  <small *ngIf="Age.invalid">
+    <div class="text-danger" *ngIf="Age.errors['pattern']">Age Is Required</div>
+   </small>
+  <div class="input-box mt-4">
+      <input
+       type="text"
+       id="address"
+       formControlName="address">
+      <label for="address">address</label>
+      <i class="bi bi-file-earmark-plus"></i>
+    </div>
+    <small *ngIf="address.invalid && address.touched">
+      <div class="text-danger" *ngIf="address.errors['required']">Address Is Required</div>
+     </small>
+  <p class="pt-5 text-center">you have Account <a class="text-body text-decoration-underline" [routerLink]="'/auth/login'">login</a></p>
+  <div class="register pt-2">
+      <button class="mb-3 btn btn-dark w-25 " id="Register" [disabled]="Register.invalid" >Register</button>
+  </div>
+</form>
+</div>
+</div>
+ </section>

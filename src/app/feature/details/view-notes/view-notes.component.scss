@@ -1,0 +1,14 @@
+h1{
+  position: relative;
+  padding-bottom: 20px;
+}
+h1::after{
+  position: absolute;
+  content: '';
+  background-color: rgb(183, 233, 3);
+  height: 10px;
+  width: 100%;
+
+  top: 117%;
+  left: 0%;
+}

@@ -1,0 +1,227 @@
+.sec {
+  position: relative;
+  padding-top: 100px;
+}
+
+.sec .graident-color, .sec .graident-colo {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  filter: blur(150px);
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #FF9999, #FFFFFF);
+  top: -40%;
+  z-index: -1;
+}
+
+.sec .graident-colo {
+  width: 50%;
+  left: 50%;
+  top: -20%;
+}
+
+.sec .Senses {
+  gap: 4px;
+}
+
+.sec .Senses .Feast {
+  gap: 1.5rem;
+}
+
+.sec .Senses .Feast small {
+  padding-block: 1.5rem;
+  width: 56%;
+  text-align: center;
+  background-color: #FFCECE;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: Medium;
+  color: #FF2626;
+  border-radius: 6.1875rem;
+}
+
+.sec .Senses .Feast h1 {
+  line-height: 44.8px;
+  font-family: SemiBold;
+}
+
+.sec .Senses .Feast h1 span {
+  color: #FF2626;
+}
+
+.sec .Senses .Feast p {
+  color: #888888;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-family: Medium;
+}
+
+.sec .Senses .Feast ul {
+  gap: 4rem;
+  flex-direction: column;
+  width: 90%;
+}
+
+.sec .Senses .Feast ul li .demo:hover {
+  background-color: pink;
+}
+
+.sec .Senses .Feast ul li .Order, .sec .Senses .Feast ul li .demo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease-out;
+}
+
+.red-btn {
+  background-color: #FF2626;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  color: #ffffff;
+  border-radius: 99px;
+  width: 50%;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 81px;
+  font-family: SemiBold;
+}
+
+.sec2 .Categories {
+  gap: 32px;
+  padding-top: 8px;
+}
+
+.sec2 .Categories :nth-child(5), .sec2 .Categories :nth-child(6), .sec2 .Categories :nth-child(7), main .sec2 .Categories :nth-child(8), .sec2 .Categories :nth-child(9), .sec2 .Categories :nth-child(10) {
+  display: none;
+}
+
+.sec2 .Categories .gallary {
+  border: 1px solid #000000;
+  padding-inline: 81px;
+  padding-block: 64px;
+  gap: 3rem;
+  border-radius: 32px;
+  transition: all 0.4s ease-in-out;
+}
+
+.sec2 .Categories .gallary small {
+  font-size: 14px;
+  line-height: 36px;
+  font-family: SemiBold;
+}
+
+.sec2 .Categories .gallary:hover {
+  background-color: #FF2626;
+  filter: drop-shadow(0 10px 32px rgba(255, 38, 38, 0.5019607843));
+}
+
+.sec2 .Categories .gallary:hover small {
+  color: white;
+}
+
+.sec3 {
+  padding-inline: 24px;
+}
+
+.sec3 .best {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sec3 .cover {
+  transition: all 0.5s ease-in;
+}
+
+.sec3 .cover:hover {
+  filter: brightness(120%);
+}
+
+.sec3 .season {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sec3 .season h3 {
+  font-size: 24px;
+  line-height: 33.6px;
+  font-family: bold;
+  color: #171717;
+}
+
+.sec3 .season p {
+  font-size: 16px;
+  font-family: Medium;
+  line-height: 24px;
+  color: #888888;
+}
+
+.sec3 .season .Now {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+.sec4 h2 {
+  line-height: 28.8px;
+  font-family: Bold;
+  font-size: 24px;
+}
+
+.sec4 .offer div {
+  background-color: #FFCECE;
+  border-radius: 99px;
+  width: 21%;
+  align-self: center;
+}
+
+.sec4 .offer h4 {
+  line-height: 36px;
+  font-size: 24px;
+  font-family: SemiBold;
+  color: #000000;
+}
+
+.sec4 .offer p {
+  font-family: Medium;
+  line-height: 24px;
+  font-size: 14px;
+  color: #888888;
+}
+
+@media (min-width: 576px) {
+  .sec2 .Categories :nth-child(5), .sec2 .Categories :nth-child(6), .sec2 .Categories :nth-child(7), .sec2 .Categories :nth-child(8), .sec2 .Categories :nth-child(9), .sec2 .Categories :nth-child(10) {
+    display: block;
+  }
+  .sec2 .Categories .gallary {
+    padding-inline: 61px;
+    padding-block: 76px;
+  }
+  .sec3 .season {
+    gap: 32px;
+  }
+  .sec3 .season h3 {
+    font-size: 54px;
+    line-height: 81px;
+  }
+  .sec3 .season .Now {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) {
+  .sec3 .season .Now {
+    justify-content: flex-start;
+    width: 21% !important;
+    align-self: center;
+    gap: 15px;
+  }
+}/*# sourceMappingURL=home.component.css.map */

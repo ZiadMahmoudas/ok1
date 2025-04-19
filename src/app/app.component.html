@@ -1,0 +1,5 @@
+<app-nav-bar *ngIf="auth.getToken()"></app-nav-bar>
+<app-loader *ngIf="loadingService.isloading | async"></app-loader>
+<router-outlet></router-outlet>
+<app-footer *ngIf="auth.getToken()"></app-footer>
+

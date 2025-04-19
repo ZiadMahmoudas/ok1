@@ -1,0 +1,143 @@
+.full-screen{
+  background-position: center center ;
+  background-repeat: no-repeat;
+  background-size: 450%;
+  background-image: url(../../../../assets/images/wallpaperflare.com_wallpaper6.png);
+  min-height: 100vh;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+ width: 100% ;
+}
+@media(min-width:576px){
+  .full-screen{
+  background-size: 190%;
+}
+}
+@media(min-width: 768px){
+  .full-screen{
+      background-size: 150%;
+  }
+}
+@media(min-width: 992px){
+  .full-screen{
+      background-size: 140%;
+  }
+}
+@media(min-width: 1115px){
+  .full-screen{
+      background-size: 100%;
+  }
+}
+@media(min-width: 1119px){
+  .full-screen{
+      background-size: 100%;
+  }
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 27px;
+  border: 2px solid #f50bcc;
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background-image: linear-gradient(to right ,#f50b0bcc, #58ee01d8);
+}
+.form{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100%;
+ flex-direction: column;
+
+}
+form{
+  width: 86%;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.content h4{
+  font-size: 1.875rem;
+  font-family: semibold;
+  text-align: center;
+  position: relative;
+}
+.content h4::after{
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  height: 3px;
+  width: 50%;
+  top: 112%;
+  left: 25%;
+}
+.content p{
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: Regular;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+  background-color: transparent;
+}
+.input-box{
+  position: relative;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: 2px solid #fff;
+}
+label{
+  position: absolute;
+  z-index: 5;
+  color: #fff;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1rem;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+input:focus ~ label,input:valid ~ label,input:focus ~ i,input:valid ~ i{
+  top: 2px;
+transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.input-box input{
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+  height: 40px;
+  color: white;
+  left: 2%;
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+i{
+  font-size: 19px;
+  cursor: pointer;
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+}
+.register{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

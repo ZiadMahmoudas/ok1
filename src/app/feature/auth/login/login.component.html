@@ -1,0 +1,41 @@
+<section class="full-screen text-white">
+  <div class="container ">
+      <div class="form">
+      <div class="content">
+          <h4 >LogIn</h4>
+          <p class="pt-2">Welcome onboard with us!</p>
+      </div>
+          <form action="#" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="sumbit()">
+  <div class="input-box mt-4">
+      <input
+       type="email"
+       id="Email"
+       formControlName="email">
+      <label for="Email">Email</label>
+      <i class="bi bi-envelope-heart-fill"></i>
+    </div>
+    <small *ngIf="email.invalid && email.touched">
+ <div class="text-danger" *ngIf="email.errors?.['pattern']">Email Is Required</div>
+</small>
+  <div class="input-box mt-4 ">
+      <input
+      #passwordInput
+       type="password"
+       id="pass"
+       formControlName="password">
+      <label for="pass">Password</label>
+      <i #btneye1 class="bi bi-eye-fill" id="eye" (click)="appear()">
+      </i>
+  </div>
+  <small *ngIf="password.invalid && password.touched ">
+    <div  class="text-danger" *ngIf="password.errors?.['pattern']">Password Is Required</div>
+  </small>
+
+  <div class="register mt-5">
+      <button class="mb-3 btn btn-dark w-25 " id="SignIN" [disabled]="loginForm.invalid" >Login</button>
+      <p class="text-center text-white-50">Don't have a account <a id="register" [routerLink]="'/auth/register'" style="cursor: pointer;" class="text-light text-decoration-underline">Register</a></p>
+  </div>
+</form>
+</div>
+</div>
+ </section>
