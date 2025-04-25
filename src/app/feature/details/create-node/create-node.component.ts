@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 import { Notes } from 'src/app/core/models/notes';
+import { NotesService } from 'src/app/core/services/notes.service';
 
 @Component({
   selector: 'app-create-node',
@@ -11,14 +13,14 @@ import { Notes } from 'src/app/core/models/notes';
 })
 export class CreateNodeComponent implements OnInit {
    constructor(
-    private FB:FormBuilder,
+    private FB:FormBuilder,private Note:NotesService,private tostar:ToastrService
 
   ){}
    Notes:FormGroup = this.FB.group({
     title:["",[Validators.required]],
     content:["",[Validators.required]],
     category:["",[Validators.required]],
-    priority:["",[Validators.required,Validators.pattern(/\b(hard|easy|medium)\b/i)]],
+    priority:["",[Validators.required]],
     tags:["",[Validators.required]],
    })
    get title() {

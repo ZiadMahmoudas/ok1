@@ -77,7 +77,7 @@
     <small *ngIf="address.invalid && address.touched">
       <div class="text-danger" *ngIf="address.errors['required']">Address Is Required</div>
      </small>
-  <p class="pt-5 text-center">you have Account <a class="text-body text-decoration-underline" [routerLink]="'/auth/login'">login</a></p>
+  <p class="pt-3 text-center">you have Account <a style="font-size: 20px;" class="text-light  text-decoration-underline" [routerLink]="'/auth/login'">login</a></p>
   <div class="register pt-2">
       <button class="mb-3 btn btn-dark w-25 " id="Register" [disabled]="Register.invalid" >Register</button>
   </div>

@@ -15,7 +15,7 @@ export class UpdateViewComponent implements OnInit{
     title:["",[Validators.required]],
     content:["",[Validators.required]],
     category:["",[Validators.required]],
-    priority:["",[Validators.required,Validators.pattern(/\b(hard|easy|medium)\b/i)]],
+    priority:["",[Validators.required]],
     tags:["",[Validators.required]],
    })
    get title() {

@@ -1,41 +1,12 @@
 .full-screen{
-  background-position: center center ;
-  background-repeat: no-repeat;
-  background-size: 450%;
-  background-image: url(../../../../assets/images/wallpaperflare.com_wallpaper6.png);
-  min-height: 100vh;
   display: flex ;
   justify-content: center;
   align-items: center;
  width: 100% ;
+ background-color: rgba(33,37,41,0.8);
+ overflow: hidden;
+ height: 100vh;
 }
-@media(min-width:576px){
-  .full-screen{
-  background-size: 190%;
-}
-}
-@media(min-width: 768px){
-  .full-screen{
-      background-size: 150%;
-  }
-}
-@media(min-width: 992px){
-  .full-screen{
-      background-size: 140%;
-  }
-}
-@media(min-width: 1115px){
-  .full-screen{
-      background-size: 100%;
-  }
-}
-@media(min-width: 1119px){
-  .full-screen{
-      background-size: 100%;
-  }
-}
-
-
 
 .container{
   display: flex;
@@ -45,7 +16,7 @@
   position: relative;
   width: 400px;
   height: 450px;
-  background-image: linear-gradient(to right ,#f50b0bcc, #58ee01d8);
+  background-color: #0f0d0d;
 }
 .form{
  display: flex;
@@ -120,7 +91,7 @@ transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   outline: none;
   width: 100%;
   height: 40px;
-  color: white;
+  color: #fff;
   left: 2%;
   position: relative;
   transition: 0.3s all ease-in-out;
@@ -133,7 +104,7 @@ i{
   left: 90%;
   top: 50%;
   transform: translateY(-50%);
-  color: #000;
+  color: #fff;
 }
 .register{
   display: flex;

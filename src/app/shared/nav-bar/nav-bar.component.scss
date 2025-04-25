@@ -1,12 +1,14 @@
 header{
   padding-bottom: 78px;
  }
- header .navbar {
+a img{
+  width: 70px;
+  height: 70px;
+}
+  header .navbar {
   position: fixed;
   width: 100%;
   z-index: 5;
-  background-color: #fff;
-  box-shadow: 2px 3px 4px #000;
   align-items: baseline;
 }
 
@@ -59,7 +61,6 @@ header .navbar .collect {
   font-size: .975rem;
   line-height: 24px;
   font-family: Medium;
-  color: #000;
   position: relative;
   transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
@@ -94,7 +95,6 @@ header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link:hove
   border: none;
   box-shadow: none;
   border-radius: 20%;
-  background-color: #592066;
 }
 
  header .navbar .collect .swap-nav .navbar-toggler i {
@@ -111,6 +111,10 @@ header .navbar .nav-icons a {
   padding-block: 5px;
   padding-inline: 8px;
 }
+
+
+
+
 
 @media(min-width:576px) {
   html {

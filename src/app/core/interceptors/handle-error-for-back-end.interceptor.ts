@@ -26,7 +26,6 @@ export class HandleErrorForBackEndInterceptor implements HttpInterceptor {
       catchError(err => {
         if (err.status === 401 || err.status === 403) {
           this.toastr.error("This Email is Unauthorized");
-          alert("You should login again");
           this.router.navigate(["/auth/login"]);
           this.auth.removeToken();
         }

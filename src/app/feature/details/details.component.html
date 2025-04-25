@@ -1,20 +1,28 @@
-<section class="sec pb-4">
+<section class="sec8 pb-4">
   <div class=" px-0 rounded-5">
       <div class="bg-dark ">
 <div class="notation text-white container  mb-3 pt-3 ">
-  <h4>All Notes</h4>
+  <div class="d-flex  justify-content-center">
+  <input
+  type="text"
+  class="form-control search-input"
+  placeholder="Search..."
+  [(ngModel)]="searchTerm"
+/>
+</div>
+<h4 *ngIf="filteredNotes.length > 0">All Recipes</h4>
+<h4 *ngIf="filteredNotes.length === 0">No Recipes Found</h4>
   <div class="d-flex gap-2">
   <button id="clear" class="d-flex  align-items-center   btn btn-success text-white" type="button" (click)="openPopup()">
-    Create Notes
+    Create Recipes
   </button>
 
 </div>
 </div>
-  <div *ngIf="allNotes.length <1 ">
-    <h2 class="text-white">No Notes Created</h2>
+  <div *ngIf="filteredNotes.length <1 ">
   </div>
   <div class="row g-0">
-  <div class="card text-bg-secondary " style="max-width: 18rem;" *ngFor="let note of allNotes">
+  <div class="card text-bg-secondary " style="max-width: 18rem;" *ngFor="let note of filteredNotes">
       <div class="col-12 col-sm-6 col-lg-4 ">
       <div class="card-header text-center"   [ngClass]="{
         'bg-danger': note.priority === 'hard',

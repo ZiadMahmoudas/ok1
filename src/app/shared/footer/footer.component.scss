@@ -4,7 +4,7 @@ footer .sec1 {
 }
 footer {
   position: relative;
-  background-color: #171717;
+
   z-index: 0;
   color: #fff;
   opacity: 0;
@@ -47,7 +47,6 @@ footer .sec1 .accor .accordion {
   gap: 32px;
 }
 footer .sec1 .accor .accordion-item .accordion-button {
-  color: #000;
   font-size: 1rem;
   line-height: 36px;
   font-family: SemiBold;
@@ -62,7 +61,7 @@ footer .sec1 .accor .accordion-item .accordion-body ul li{
 }
 footer .sec1 .magic  ul   p {
   transition: all 0.3s ease-in-out;
-  color: #fff;
+
 }
 footer .sec1 .accor  ul   p {
   transition: all 0.3s ease-in-out;
@@ -80,7 +79,6 @@ footer .sec1 .magic ul  p:hover,footer .sec1 .accor ul  p:hover {
       justify-content: center;
 }
 .accor ul{
-  color: #000;
   transition: all 0.3s ease-in-out;
   line-height: 24px;
   font-family: Medium;
@@ -106,8 +104,6 @@ footer .sec1 .social .media a {
   border-radius: 50%;
   padding-inline: 8px;
   padding-block: 5px;
-  color: #171717;
-  color: #fff;
   background-color: transparent;
   transition: 0.3s ease-in-out;
 
@@ -136,8 +132,8 @@ footer .sec1 .social p {
   font-family: Medium;
 }
 img{
-  background: #bb5d5d;
-    box-shadow: 4px 4px 3px #F1EB6C;
+  width: 90px;
+  height: 90px;
 }
 @media(min-width:576px){
   html{
@@ -166,7 +162,7 @@ img{
     font-family: SemiBold;
   }
   footer .sec1 .magic ul a {
-    color: #fff;
+
     line-height: 24px;
     font-size: 14px;
     font-family: Medium;

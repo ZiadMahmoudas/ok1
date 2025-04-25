@@ -1,6 +1,6 @@
-import { AfterContentInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-import { map } from 'rxjs';
+import { map, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { CreateNodeComponent } from './create-node/create-node.component';
 import { NotesService } from 'src/app/core/services/notes.service';
@@ -14,7 +14,7 @@ import { Notes } from 'src/app/core/models/notes';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit,OnDestroy {
   constructor(
     private notes:NotesService,
     private tostar:ToastrService,
@@ -22,10 +22,13 @@ export class DetailsComponent implements OnInit {
   isPopupOpenCreate = false;
   isPopupOpenDelete = false;
   isEdit = false
-  allNotes = [];
+  filteredNote = [];
   selected:Notes;
   currentId:number;
+  isCreatedNote=false;
   @ViewChild(CreateNodeComponent) childComp: CreateNodeComponent;
+  notesSub: Subscription[] = [];
+
   openPopup() {
     this.isPopupOpenCreate = true;
     this.isEdit =false;
@@ -46,7 +49,7 @@ export class DetailsComponent implements OnInit {
     this.currentId = id;
     this.isEdit =true;
     this.isPopupOpenCreate = true
-  this.selected = this.allNotes.find((Note:Notes)=>  Note.id === this.currentId)
+  this.selected = this.filteredNote.find((Note:Notes)=>  Note.id === this.currentId)
   }
 
   closepopupDelete(){
@@ -57,7 +60,8 @@ export class DetailsComponent implements OnInit {
       this.tostar.warning("Enter Your Correct Data please Don't play For Disabled Input");
       return;
     }
-    this.notes.CreateNewNotes(this.childComp.Notes.value)
+   this.notes.CreateNewNotes(this.childComp.Notes.value)
+
   }
   ngOnInit() {
     setTimeout(() => {
@@ -65,19 +69,21 @@ export class DetailsComponent implements OnInit {
     });
   }
   FetchNotes() {
-    this.notes.getNotes().pipe(
+        let sub = this.notes.getNotes().pipe(
       map((res) => Object.values(res))
     ).subscribe(res => {
-      this.allNotes = res;
+      this.filteredNote = res;
     });
+    this.notesSub.push(sub);
   }
 onConfirmDelete(){
-  this.notes.DeleteNotes(this.currentId).subscribe({
+      let sub = this.notes.DeleteNotes(this.currentId).subscribe({
     next:()=>{
      this.tostar.success("Note Deleted Successfully");
-     this.selected = this.allNotes.find((Note:Notes)=>  Note.id === this.currentId)
+     this.selected = this.filteredNote.find((Note:Notes)=>  Note.id === this.currentId)
      this.FetchNotes()
      this.closepopupDelete();
+     this.isCreatedNote = false;
     },
     error:(err)=>{
       console.log(err);
@@ -86,6 +92,7 @@ onConfirmDelete(){
       }
     }
   })
+  this.notesSub.push(sub);
 }
 
 updateNotes(){
@@ -93,14 +100,15 @@ updateNotes(){
     this.tostar.warning("Enter Your Correct Data please Don't play For Disabled Input");
     return;
   }
-  this.notes.updateNotes(this.currentId,this.childComp.Notes.value)
+ this.notes.updateNotes(this.currentId,this.childComp.Notes.value)
 
 }
 
   createOrupdateNotes(data: Notes) {
     if (!this.isEdit) {
-      this.notes.CreateNewNotes(data).subscribe({
+         let sub = this.notes.CreateNewNotes(data).subscribe({
         next: () => {
+          this.isCreatedNote = true;
           this.tostar.success("Note created successfully.");
           this.FetchNotes();
           this.closePopup();
@@ -110,8 +118,9 @@ updateNotes(){
           this.tostar.error("Failed to create note.");
         }
       });
+      this.notesSub.push(sub);
     } else {
-      this.notes.updateNotes(this.currentId, data).subscribe({
+          let sub = this.notes.updateNotes(this.currentId, data).subscribe({
         next: () => {
           this.tostar.success("Note updated successfully.");
           this.FetchNotes();
@@ -122,6 +131,24 @@ updateNotes(){
           this.tostar.error("Failed to update note.");
         }
       });
+      this.notesSub.push(sub);
     }
-  }}
+  }
+  searchTerm: string = '';
+  get filteredNotes() {
+    const term = this.searchTerm.toLowerCase().trim();
+    const filtered = term
+      ? this.filteredNote.filter(note =>note.title.toLowerCase().includes(term))
+      : this.filteredNote;
+    return filtered;
+}
+ngOnDestroy() {
+  if (this.notesSub) {
+    this.notesSub.forEach(sub => sub.unsubscribe());
+    console.log('DetailsComponent destroyed');
+    console.log(this.notesSub);
+
+  }
+}
+}
 

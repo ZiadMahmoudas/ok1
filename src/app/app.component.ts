@@ -11,10 +11,5 @@ import { AuthService } from './core/services/auth.service';
 export class AppComponent {
   title = 'pro';
   constructor(public loadingService:LoaderService,public auth:AuthService){}
-  // obj={
-  //   name:"omar",
-  //   age:26
-  // }
-  // currentDate:Date = new Date();
-  // arr = ["omar","Mazen"]
+
 }

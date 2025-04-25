@@ -1,12 +1,12 @@
 .bi-x-circle{
   position: absolute;
-  left: 80%;
+  left: 78%;
   top: 2%;
   font-size: 24px;
   cursor: pointer;
   z-index: 1;
 }
-form label{
+form label,p{
   font-size: 1.0625rem;
   color: rgba(13, 110, 190, 0.582);
 }
@@ -39,7 +39,7 @@ h1{
 
 @media(min-width:576px){
   .bi-x-circle{
-    left: 84%;
+    left: 78%;
   }
   h1{
     position: relative;

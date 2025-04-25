@@ -1,0 +1,9 @@
+<button id="change-mode" (click)="toggleMode()">
+  <i
+    [ngClass]="{
+      'bi bi-moon-fill': !isDarkMode,
+      'bi-sun-fill bi': isDarkMode
+    }"
+    [style.color]="isDarkMode ? '#000' : '#fff'">
+  </i>
+</button>

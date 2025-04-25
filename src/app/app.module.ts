@@ -21,6 +21,7 @@ import { ViewNotesComponent } from './feature/details/view-notes/view-notes.comp
 import { DeleteComponent } from './feature/details/delete/delete.component';
 import { CreateNodeComponent } from './feature/details/create-node/create-node.component';
 import { DetailsComponent } from './feature/details/details.component';
+import { ThemeToggleComponent } from './shared/theme-toggle/theme-toggle.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { DetailsComponent } from './feature/details/details.component';
     DeleteComponent,
     ViewNotesComponent,
     UpdateViewComponent,
-    DeletedComponent
+    DeletedComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { DetailsComponent } from './feature/details/details.component';
     ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    ThemeToggleComponent,
    AuthModule,
     HttpClientModule,
     SharedModule,

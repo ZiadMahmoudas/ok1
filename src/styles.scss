@@ -7,6 +7,7 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
 p,h1,h2,h3,h4,h5,h6,ul,li{margin-bottom: 0;}
 ul{padding-left: 0;}
+button{border: 0;outline: 0;box-shadow: none;background-color: transparent;}
 @font-face {
   font-family: Bold;
   src: url(../Poppins/Poppins-Bold.ttf);
@@ -44,4 +45,65 @@ a{text-decoration: none;}
   html{
     font-size: 16px;
   }
+}
+.light-mode  header .navbar{
+  background-color: #fff;
+  box-shadow: 2px 3px 4px #000;
+ }
+ .dark-mode header .navbar{
+  background-color: #171717;
+  box-shadow: 2px 3px 4px #fff;
+}
+.dark-mode{
+  background-color: #171717;
+}
+.light-mode{
+  background-color: #fff;
+}
+.light-mode .sec3,.light-mode .sec,.light-mode .sec4,.light-mode footer{
+  background-color: #fff;
+}
+.dark-mode .sec4,.dark-mode .sec3,.dark-mode .sec,.dark-mode footer{
+  background-color: #171717;
+}
+.dark-mode .sec4 .offer h4,
+.dark-mode .sec4 h2,
+.dark-mode .sec3 .season h3,
+.dark-mode footer .sec1 .magic  ul   p,
+.dark-mode footer .sec1 .accor .accordion-item .accordion-button,
+.dark-mode .accor ul,
+.dark-mode footer .sec1 .social .media a,
+.dark-mode footer .sec1 .magic ul h2,
+.dark-mode footer .sec1 .inner-container .destination p,
+.dark-mode header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link,
+.dark-mode  .search-icon,
+.dark-mode .Bon,
+.dark-mode header .navbar .collect .swap-nav .navbar-toggler i
+{
+  color: #fff;
+}
+.light-mode .sec4 .offer h4,
+.light-mode .sec4 h2,
+.light-mode .sec3 .season h3,
+.light-mode footer .sec1 .accor .accordion-item .accordion-button,
+.light-mode footer .sec1 .magic  ul   p,
+.light-mode .accor ul,
+.light-mode footer .sec1 .social .media a ,
+.light-mode footer .sec1 .magic ul h2,
+.light-mode footer .sec1 .inner-container .destination p,
+.light-mode header .navbar .collect .swap-nav .navbar-collapse .navbar-nav li .nav-link,
+.light-mode .search-icon,
+.light-mode .Bon,
+.light-mode header .navbar .collect .swap-nav .navbar-toggler i
+{
+  color: #000;
+}
+
+@media(min-width:576px){
+.dark-mode   footer .sec1 .magic ul a {
+  color: #fff;
+}
+.light-mode   footer .sec1 .magic ul a {
+  color: #000;
+}
 }

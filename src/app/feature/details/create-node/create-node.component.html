@@ -9,7 +9,7 @@
  (ngSubmit)="onSumbit()"
 
  >
- <h1 class="mb-1">{{isEdit? "UpdateNotes": "createNotes"}}</h1>
+ <h1 class="mb-1">{{isEdit? "UpdateRecipes": "createRecipes"}}</h1>
  <div class=" d-flex flex-column gap-1 mb-1 align-items-center">
   <label for="tilte" class="form-label text-start w-50">Title:</label>
   <input type="text"  id="tilte" class="form-control w-50" formControlName="title">
@@ -27,9 +27,16 @@
  </div>
  <small *ngIf="content.errors?.['required'] && content.touched" class="text-danger">This Content Required</small>
  <div class=" d-flex flex-column gap-1 mb-1  align-items-center">
-  <label for="Priority" class="form-label text-start w-50">Priority:</label>
-  <input type="text"  id="Priority" class="form-control w-50" formControlName="priority">
-  <small *ngIf="priority.errors?.['pattern']" class="text-danger">This Priority (hard Or easy Or medium) for use any write</small>
+  <p class="text-start w-50">Priority:</p>
+  <select
+    id="Priority"
+    class="form-select w-50"
+    formControlName="priority">
+    <option value="">Select Priority</option>
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
  </div>
  <div class=" d-flex flex-column gap-1 mb-1  align-items-center">
   <label for="Tags" class="form-label text-start w-50">Tags:</label>
@@ -40,7 +47,7 @@
  <button
   class="btn btn-primary w-25"
   [disabled]="Notes.invalid"
-   >{{isEdit? "UpdateNotes": "createNotes"}}</button>
+   >{{isEdit? "UpdateRecipes": "createRecipes"}}</button>
  <button
   class="btn btn-dark w-25"
    type="button"
