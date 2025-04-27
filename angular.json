@@ -34,16 +34,17 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "./node_modules/ngx-toastr/toastr.css",
-              "src/styles.scss"
+           "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "./node_modules/scrollreveal/dist/scrollreveal.js",
               "./node_modules/swiper/swiper-bundle.min.js"
             ]
           },
           "configurations": {
             "production": {
+
               "budgets": [
                 {
                   "type": "initial",
@@ -55,7 +56,8 @@
                   "maximumWarning": "3mb",
                   "maximumError": "3mb"
                 }
-              ]
+              ],
+              "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
@@ -72,6 +74,7 @@
               ]
             }
           },
+
           "defaultConfiguration": "production"
         },
         "serve": {
@@ -110,23 +113,11 @@
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
-          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "3b6bb85f-bae5-40c7-95ca-250bdff33633",
-    "schematicCollections": [
-      "angular-eslint"
-    ]
+    "analytics": "3b6bb85f-bae5-40c7-95ca-250bdff33633"
   }
 }
