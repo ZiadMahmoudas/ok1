@@ -133,5 +133,4 @@ app.delete('/notes/:id', authenticate, (req, res) => {
     writeData('notes.json', newNotes);
     res.json({ message: "Note deleted" });
 });
-app.use(express.static('frontend'));
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

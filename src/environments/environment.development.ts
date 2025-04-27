@@ -1,4 +1,4 @@
 export const environment = {
-  production:true, /* deploy in git-hub */
-  baseurl:"http://localhost:8000/"
+      prodction:false, /* local on server  */
+      apiUrl:"http://localhost:8000"
 };

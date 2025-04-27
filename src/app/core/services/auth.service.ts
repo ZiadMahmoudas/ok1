@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { User } from 'src/app/core/models/users';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   url: string;
   constructor(private http:HttpClient) {
-    this.url = environment.baseurl;
+    this.url = environment.apiUrl;
    }
 
   token:string = "User_Token" /* Key For Token */
@@ -29,14 +29,14 @@ export class AuthService {
   }
 /*  Register */
 postReg(data: User) {
-   const url1 = `${this.url}register`;
+   const url1 = `${this.url}/register`;
     return this.http.post(url1, data);
   }
 /*  Register End*/
 
 /* Login */
 postLog(data:User){
-  const urlLog = `${this.url}login`;
+  const urlLog = `${this.url}/login`;
   return this.http.post(urlLog,data);
  }
  /* Login End */
