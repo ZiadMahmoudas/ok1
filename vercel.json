@@ -6,7 +6,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/dist/angular-project/$1"
+      "destination": "/dist/pro/$1"
     }
   ]
 }
