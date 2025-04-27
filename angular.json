@@ -34,30 +34,26 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "./node_modules/ngx-toastr/toastr.css",
-           "src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": [
-               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "./node_modules/scrollreveal/dist/scrollreveal.js",
               "./node_modules/swiper/swiper-bundle.min.js"
             ]
           },
           "configurations": {
             "production": {
+              "optimization": true,
+              "outputHashing": "all",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.production.ts"
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "buildOptimizer": true,
-              "serviceWorker": true,
+              "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -69,8 +65,7 @@
                   "maximumWarning": "3mb",
                   "maximumError": "3mb"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -87,7 +82,6 @@
               ]
             }
           },
-
           "defaultConfiguration": "production"
         },
         "serve": {
@@ -126,11 +120,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "3b6bb85f-bae5-40c7-95ca-250bdff33633"
+    "analytics": "3b6bb85f-bae5-40c7-95ca-250bdff33633",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
