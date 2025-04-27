@@ -13,19 +13,19 @@ export class NotesService {
     this.url = environment.apiUrl;
    }
   CreateNewNotes(data:Notes){
-    const url = `${this.url}/notes`
+    const url = `${this.url}/api/notes`
    return this.http.post(url,data)
   }
   getNotes(){
-    const url = `${this.url}/notes`
+    const url = `${this.url}/api/notes`
     return this.http.get(url)
   }
   DeleteNotes(id:number | undefined){
-    const url = `${this.url}/notes/${id}`
+    const url = `${this.url}/api/notes/${id}`
     return this.http.delete(url)
   }
   updateNotes(id:number | undefined,data:Notes){
-    const url = `${this.url}/notes/${id}`
+    const url = `${this.url}/api/notes/${id}`
 
     return this.http.put(url,data)
   }

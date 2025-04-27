@@ -29,14 +29,14 @@ export class AuthService {
   }
 /*  Register */
 postReg(data: User) {
-   const url1 = `${this.url}/register`;
+   const url1 = `${this.url}/api/register`;
     return this.http.post(url1, data);
   }
 /*  Register End*/
 
 /* Login */
 postLog(data:User){
-  const urlLog = `${this.url}/login`;
+  const urlLog = `${this.url}/api/login`;
   return this.http.post(urlLog,data);
  }
  /* Login End */
