@@ -1,5 +1,5 @@
-const cors = require('cors')
 const express = require('express');
+const cors = require('cors')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -134,3 +134,6 @@ app.delete('/notes/:id', authenticate, (req, res) => {
     res.json({ message: "Note deleted" });
 });
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = (req, res) => {
+  app(req, res);
+};
